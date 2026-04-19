@@ -21,6 +21,10 @@
 /playwright-report
 /test-results
 
+# source assets (uploaded to Vercel Blob separately)
+*.pdf
+"eBook on tablet no background.png"
+
 # misc
 .DS_Store
 *.pem

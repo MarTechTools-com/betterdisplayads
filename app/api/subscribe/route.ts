@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: "hello@betterdisplayads.com",
+      from: "noreply@displaygateguard.com",
       to: email,
       subject: "Your free ebook: Display Advertising Gone Bad",
       html: `
