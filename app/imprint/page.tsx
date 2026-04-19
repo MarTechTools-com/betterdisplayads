@@ -53,14 +53,6 @@ export default function Imprint() {
             Guard.
           </p>
 
-          <p>
-            <em>
-              A registered business address will be added once our legal entity
-              is established. In the meantime, please use the contact below for
-              all legal and business correspondence.
-            </em>
-          </p>
-
           <h2>Contact</h2>
           <p>
             Email:{" "}
