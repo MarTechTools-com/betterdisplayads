@@ -47,20 +47,53 @@ export default function Imprint() {
         </h1>
 
         <div className="prose">
-          <h2>Responsible for this website</h2>
+          <h2>Operator</h2>
           <p>
-            BetterDisplayAds.com is operated by the owner of DisplayGateGuard.
-            For legal correspondence, please use the contact address below.
+            BetterDisplayAds.com is operated by the team behind Display Gate
+            Guard.
+          </p>
+
+          <p>
+            <em>
+              A registered business address will be added once our legal entity
+              is established. In the meantime, please use the contact below for
+              all legal and business correspondence.
+            </em>
           </p>
 
           <h2>Contact</h2>
           <p>
-            <a href="mailto:hello@betterdisplayads.com">
-              hello@betterdisplayads.com
+            Email:{" "}
+            <a href="mailto:info@displaygateguard.com">
+              info@displaygateguard.com
             </a>
           </p>
 
-          <h2>Dispute resolution</h2>
+          <h2>Responsible for content</h2>
+          <p>
+            The editorial team at BetterDisplayAds.com is responsible for the
+            content published on this website within the meaning of applicable
+            press law.
+          </p>
+
+          <h2>Liability for content</h2>
+          <p>
+            The content of this website has been created with care. We accept no
+            liability for the accuracy, completeness, or timeliness of the
+            information provided. This website is for informational purposes
+            only and does not constitute legal, financial, or professional
+            advice.
+          </p>
+
+          <h2>Liability for links</h2>
+          <p>
+            This website contains links to external third-party websites. We
+            have no influence over the content of those sites and accept no
+            liability for them. The respective operators of those sites are
+            solely responsible for their content.
+          </p>
+
+          <h2>Online dispute resolution (EU)</h2>
           <p>
             The European Commission provides an online dispute resolution
             platform:{" "}
@@ -71,8 +104,9 @@ export default function Imprint() {
             >
               https://ec.europa.eu/consumers/odr
             </a>
-            . We are not obliged to participate in dispute resolution proceedings
-            before a consumer arbitration board.
+            . We are not obligated to participate in dispute resolution
+            proceedings before a consumer arbitration board and do not currently
+            do so.
           </p>
         </div>
       </main>

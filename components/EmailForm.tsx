@@ -174,7 +174,12 @@ export function EmailForm({ sourcePage, compact = false }: Props) {
           onChange={(e) => setGdpr(e.target.checked)}
           style={{ marginTop: 2, accentColor: "var(--accent)", flexShrink: 0 }}
         />
-        I agree to receive occasional updates about display advertising quality.
+        I agree to receive occasional emails about display advertising quality.
+        By submitting, you confirm you have read our{" "}
+        <a href="/privacy" style={{ color: "var(--accent)" }}>
+          Privacy Policy
+        </a>
+        .
       </label>
 
       {errorMsg && (
