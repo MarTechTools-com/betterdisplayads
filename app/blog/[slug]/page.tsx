@@ -50,17 +50,7 @@ export default async function BlogPost({ params }: Props) {
     <>
       <Nav />
 
-      <main
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "64px 40px 80px",
-          display: "grid",
-          gridTemplateColumns: "1fr 320px",
-          gap: 80,
-          alignItems: "start",
-        }}
-      >
+      <main className="blog-post-layout">
         {/* Article */}
         <article>
           <Link

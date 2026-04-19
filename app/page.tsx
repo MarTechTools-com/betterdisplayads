@@ -130,17 +130,7 @@ export default async function Home() {
       <Nav />
 
       {/* ── HERO ─────────────────────────────────────── */}
-      <section
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "100px 40px 80px",
-          display: "grid",
-          gridTemplateColumns: "1fr 420px",
-          gap: 60,
-          alignItems: "center",
-        }}
-      >
+      <section className="hero-grid">
         <div>
           <div
             style={{
@@ -205,6 +195,7 @@ export default async function Home() {
         </div>
 
         <div
+          className="book-col"
           style={{
             display: "flex",
             alignItems: "center",
@@ -238,15 +229,7 @@ export default async function Home() {
           padding: "40px 40px",
         }}
       >
-        <div
-          style={{
-            maxWidth: 1120,
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 40,
-          }}
-        >
+        <div className="stats-grid">
           {STATS.map((stat) => (
             <div key={stat.number}>
               <div
@@ -515,13 +498,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 24,
-            }}
-          >
+          <div className="blog-card-grid">
             {posts.map((post) => (
               <Link
                 key={post.slug}
@@ -595,14 +572,7 @@ export default async function Home() {
       <section
         style={{ maxWidth: 1120, margin: "0 auto", padding: "80px 40px" }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
-            alignItems: "start",
-          }}
-        >
+        <div className="tool-section-grid">
           <div>
             <div
               style={{
