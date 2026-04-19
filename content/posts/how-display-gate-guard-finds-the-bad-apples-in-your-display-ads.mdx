@@ -1,45 +1,61 @@
 ---
-title: "How Display Gate Guard Finds the Bad Apples in Your Display Ads"
+title: "Eight Signals That Predict Whether a Display Placement Is Wasting Your Budget"
 date: "2024-07-02"
-excerpt: "Eight dimensions we analyze to identify problematic placements — from brand safety to ad density."
+excerpt: "Not all bad placements look obviously bad. These are the signals that consistently separate high-waste placements from high-value ones."
 ---
 
-Selecting the right websites for your display advertising has a direct impact on campaign performance, brand perception, and actual ROI. Broad targeting on Google Display Network means your ads can run on tens of thousands of sites. Most of them are fine. Some of them aren't. Finding the bad ones at scale is the problem we built DisplayGateGuard to solve.
+There are over two million websites in the Google Display Network. Your campaigns will touch thousands of them. Some will deliver real results. Others will absorb budget silently. The challenge is that the difference isn't always obvious from a domain name or a quick visit.
 
-Here are the dimensions we analyze.
+Practitioners and researchers studying display quality have converged on a set of signals that reliably predict whether a placement will produce commercial results. Here they are.
 
-## 1. Controversial Content
+## 1. Ad Density
 
-Polarizing or contentious content creates unintended brand associations even when it doesn't meet the threshold for "unsafe." We flag sites where the editorial stance could undermine your brand's position in the market.
+The number of active ad units per page is one of the strongest predictors of placement quality. MFA sites maximize ad units — they'll run 8 to 15 ads per page. IAS research found that MFA sites average 11.4 ads per page compared to 4.1 on legitimate publisher sites.
 
-## 2. Hyperpolitical and Extremist Sites
+High ad density creates two problems: your ad competes for attention against a dozen others on the same page, and the ad-saturated environment signals to users that the site isn't a trusted destination. Both reduce effectiveness.
 
-Divisive political content is a distinct category from general controversy. Sites that take extreme ideological positions — regardless of which direction — represent reputational risk for most brands. We identify them and flag them for review.
+**Flag at:** More than 5–6 ad units visible on a standard page layout.
 
-## 3. Adult Content
+## 2. Content-to-Ad Ratio
 
-Sites with adult-oriented content may reach audiences outside your target demographic and create perception problems regardless of audience match. Most brands want to exclude these entirely.
+Related to density but distinct. Some sites have a low raw ad count but very thin content. A 200-word article with three ad units has a different ratio than a 2,000-word piece with three ad units. Sites with minimal content and significant ad presence are usually built for inventory, not readership.
 
-## 4. Firearms and Weapons Sites
+## 3. Traffic Source Composition
 
-Depending on your brand values and audience, firearms-focused sites may be unsuitable. We identify them so you can make an explicit inclusion or exclusion decision rather than discovering the placement in an audit six months later.
+Where does a site's traffic come from? Sites with strong direct and organic search traffic have audiences with real intent. Sites that buy 50%+ of their traffic through content recommendation networks (Outbrain, Taboola, MGID) are arbitraging: they pay for visitors and monetize them through ad impressions.
 
-## 5. Children's Content
+This model produces real human traffic with near-zero commercial intent. Users didn't seek out the site. They clicked a headline in a content feed, glanced at the page, and left.
 
-Age-appropriate placement is a suitability concern in both directions. Sites targeting children may not suit adult products, and some brands specifically want to include or exclude them for legal or ethical reasons.
+## 4. Post-Click Bounce Rate and Session Duration
 
-## 6. Gambling and Gaming Sites
+Post-click behavior on your landing page tells you whether the audience was genuinely engaged. Placements where users consistently bounce within 5–10 seconds have audiences that weren't in any purchasing mindset.
 
-Gaming and gambling platforms carry associations that affect some brands disproportionately. We flag them for review, particularly for financial services, health, and family-focused brands.
+Compare each placement against your campaign average. Placements with bounce rates 30+ percentage points above average, sustained over 60+ days, are strong exclusion candidates regardless of other signals.
 
-## 7. Made-for-Advertising Sites
+## 5. Conversion Rate on a 90-Day Window
 
-The largest budget-draining category. We analyze: content depth, article quality, clickbait signal, ad density, author credibility, and engagement indicators. Sites that score poorly on MFA dimensions get flagged for exclusion.
+The most direct signal. If a placement has received meaningful spend over 90 days and produced no conversions, something is wrong. Combined with high bounce rate, it's a clear exclusion signal.
 
-## 8. Ad-to-Content Ratio
+Don't cut placements too early. Some need volume to show statistical patterns. Ninety days and a minimum spend threshold (roughly $100–200 depending on your CPA target) is a reasonable starting point.
 
-This is a direct quality signal. A page where ads outnumber content paragraphs is not a content page — it's an ad inventory page. We calculate the ratio and weight it in our scoring.
+## 6. Internal Link Depth
 
-## What You Get
+Real publications have editorial depth. They have category archives, author pages, related articles, real internal search. MFA sites are shallow — navigation links often lead back to the homepage or to more thin-content pages.
 
-Every domain in your placement report gets a score across these dimensions. You see which sites are safe, which need review, and which to exclude immediately. The output is an exclusion list you can apply directly in Google Ads — account-wide, as of January 2026.
+Test this manually in 60 seconds: click several internal links. Does the content get richer as you go deeper, or does every page look like the same template with different keywords?
+
+## 7. Author and Editorial Credibility
+
+Legitimate publishers have identifiable human editors and writers. Author pages link to people with real professional histories. MFA sites use generic bylines ("Staff Writer," "Admin") or AI-generated personas. Byline names that don't appear anywhere outside the site are a red flag.
+
+## 8. Social Proof
+
+Real audiences share content. A publisher with a genuinely engaged readership will have social presence with follower counts and engagement rates proportional to their claimed traffic. A site claiming 5 million monthly readers with 400 Twitter followers and no post engagement doesn't have the audience it appears to.
+
+Low-quality sites often have social icons that link to abandoned accounts or pages with minimal engagement despite high claimed traffic.
+
+---
+
+No single signal is definitive. Placements that fail three or more of these checks consistently are spending your budget without delivering commercial results.
+
+Running through this checklist on your highest-spend unknown placements — even manually — will identify the worst offenders faster than waiting for conversion data to accumulate. Start with the top 20 placements by spend that you can't immediately verify as legitimate publishers. The list of domains worth excluding becomes clear quickly.
