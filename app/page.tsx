@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Stop Wasting Ad Spend on MFA Sites — Free Ebook",
   description:
     "Download the free ebook: Display Advertising Gone Bad. Learn how Made-for-Advertising sites drain your Google Ads budget — and how Display Gate Guard stops it.",
+  alternates: {
+    canonical: "https://www.betterdisplayads.com/",
+  },
+  openGraph: {
+    url: "https://www.betterdisplayads.com/",
+    type: "website",
+  },
 };
 
 const STATS = [

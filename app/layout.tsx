@@ -31,7 +31,10 @@ export const metadata: Metadata = {
   },
   description:
     "Free ebook and resources for performance marketers. Learn how Made-for-Advertising sites drain your Google Ads budget and how to stop it.",
-  metadataBase: new URL("https://betterdisplayads.com"),
+  metadataBase: new URL("https://www.betterdisplayads.com"),
+  alternates: {
+    canonical: "https://www.betterdisplayads.com",
+  },
   openGraph: {
     type: "website",
     siteName: "BetterDisplayAds.com",
@@ -40,6 +43,22 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BetterDisplayAds.com",
+  url: "https://www.betterdisplayads.com",
+  description:
+    "Resources and tools for performance marketers to identify and exclude low-quality Made-for-Advertising (MFA) sites from Google Display campaigns.",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "BetterDisplayAds.com",
+  url: "https://www.betterdisplayads.com",
 };
 
 export default function RootLayout({
@@ -52,6 +71,16 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body>
         <GridCanvas />
         <div className="page-content">

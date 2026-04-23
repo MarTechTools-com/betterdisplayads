@@ -1,0 +1,34 @@
+# BetterDisplayAds.com
+
+> Resources for performance marketers to identify and stop Made-for-Advertising (MFA) sites from draining Google Ads display budgets.
+
+BetterDisplayAds.com explains how MFA sites, click farms, and ad stacking systematically waste Google Display Network spend — and provides a free ebook and placement audit tool to stop it.
+
+## Key pages
+
+- [Home](https://www.betterdisplayads.com/): Free ebook on display ad fraud and MFA site exclusion
+- [Blog](https://www.betterdisplayads.com/blog): Articles on display ad placement quality, MFA detection, and Google Display Network
+
+## Tool
+
+- [Display Gate Guard](https://displaygg.com): Self-service placement audit tool. Export your Google Ads placement report, upload it, and receive a scored exclusion list ready to import. Also offers a full-service analysis with written recommendations.
+
+## Blog posts
+
+- [Smart Bidding Got Smarter. Your Placement List Didn't.](https://www.betterdisplayads.com/blog/improving-ad-relevance-in-2026-does-ai-targeting-help-or-hurt) — AI bidding optimizes on top of whatever inventory it is given. If that inventory includes junk placements, it optimizes junk more efficiently.
+- [Your Display Ad Isn't Being Ignored. It Isn't Being Seen.](https://www.betterdisplayads.com/blog/ad-clutter-and-the-fight-for-awareness) — Viewability metrics tell you the ad loaded. They do not tell you a human saw it.
+- [Why Google Display Network Has a Placement Quality Problem Google Won't Fix](https://www.betterdisplayads.com/blog/what-are-low-quality-display-websites-and-how-do-they-affect-your-campaign) — Google makes money when your ad runs. Publishers make money when your ad runs. You are the only one in the transaction who loses when the placement is junk.
+- [We Audited a Real $50K/Month Display Campaign. Here's What We Found.](https://www.betterdisplayads.com/blog/understanding-and-improving-ad-relevance) — Real placement audit findings from an active Google Display campaign.
+- [Eight Signals That Predict Whether a Display Placement Is Wasting Your Budget](https://www.betterdisplayads.com/blog/how-display-gate-guard-finds-the-bad-apples-in-your-display-ads) — The scoring dimensions used to identify low-quality placements before they drain spend.
+- [The Placement Report Most Google Ads Managers Never Open](https://www.betterdisplayads.com/blog/boosting-ad-relevance-how-gdn-s-contextual-targeting-enhances-user-experience) — The most informative report in Google Ads is also the most ignored.
+- [The AI MFA Arms Race: Why the Placement Quality Problem Is Getting Harder](https://www.betterdisplayads.com/blog/the-rise-of-ai-driven-fraudulent-websites-an-uninvited-digital-clutter) — Generative AI has made it trivially cheap to spin up MFA sites at scale.
+- [The Hidden Reason Post-Cookie Targeting Underperforms](https://www.betterdisplayads.com/blog/post-cookie-era-approaches-to-programmatic-display-marketing-without-3rd-party-data) — Signal loss gets the blame, but placement quality is often the real culprit.
+- [Contextual Targeting Works — But Only If the Context Is Real](https://www.betterdisplayads.com/blog/contextual-targeting-navigating-the-cookieless-future-with-precision) — Contextual targeting on MFA sites is still wasted spend, regardless of keyword match.
+- [How to Spot an MFA Site Without Running a Tool](https://www.betterdisplayads.com/blog/the-pointless-side-of-the-web-made-for-advertising-websites) — Made-for-advertising sites have recognizable patterns. Once you know them, you can identify one in under 60 seconds.
+
+## Key concepts
+
+- **MFA (Made-for-Advertising) sites**: Low-quality websites built primarily to generate ad revenue, not serve readers. Characterized by high ad density, thin content, and non-human traffic.
+- **Placement exclusions**: Google Ads feature that lets advertisers block specific domains from receiving their display ads.
+- **Display Gate Guard**: The placement audit tool offered at displaygg.com. Users export their placement report from Google Ads and upload it for scoring.
+- **Ad density**: The ratio of ad space to content on a page — a primary signal of MFA site classification.

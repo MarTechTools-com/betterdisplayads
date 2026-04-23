@@ -7,6 +7,8 @@ import { Nav } from "@/components/Nav";
 import { EmailForm } from "@/components/EmailForm";
 import { getAllPosts, getPostSource, postExists } from "@/lib/posts";
 
+const BASE = "https://www.betterdisplayads.com";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -21,15 +23,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const source = getPostSource(slug);
   const { data } = matter(source);
+  const url = `${BASE}/blog/${slug}`;
 
   return {
     title: data.title,
     description: data.excerpt ?? data.description ?? "",
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: data.title,
       description: data.excerpt ?? data.description ?? "",
       type: "article",
+      url,
       publishedTime: data.date,
+      siteName: "BetterDisplayAds.com",
     },
   };
 }
@@ -46,8 +54,38 @@ export default async function BlogPost({ params }: Props) {
     options: { parseFrontmatter: true },
   });
 
+  const postUrl = `${BASE}/blog/${slug}`;
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: frontmatter.title,
+    description: frontmatter.excerpt ?? frontmatter.description ?? "",
+    url: postUrl,
+    datePublished: frontmatter.date,
+    dateModified: frontmatter.date,
+    author: {
+      "@type": "Organization",
+      name: "BetterDisplayAds.com",
+      url: BASE,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "BetterDisplayAds.com",
+      url: BASE,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <Nav />
 
       <main className="blog-post-layout">
@@ -77,11 +115,13 @@ export default async function BlogPost({ params }: Props) {
               marginBottom: 16,
             }}
           >
-            {new Date(frontmatter.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            <time dateTime={frontmatter.date}>
+              {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
           </div>
 
           <h1

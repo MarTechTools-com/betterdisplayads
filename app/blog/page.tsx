@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Blog — Display Advertising Quality",
   description:
     "Articles about MFA sites, ad fraud, display advertising quality, and how to improve your ROAS on Google Display Network.",
+  alternates: {
+    canonical: "https://www.betterdisplayads.com/blog",
+  },
 };
 
 export default function Blog() {
