@@ -82,18 +82,18 @@ const PLACEMENTS = [
 const TOOL_STEPS = [
   {
     step: "01",
-    title: "Connect your Google Ads account",
-    body: "OAuth 2.0 — read-only access. We never touch your campaigns or budgets.",
+    title: "Export your placement report",
+    body: "Download your placement performance report from Google Ads. Takes about 30 seconds — no integrations, no OAuth.",
   },
   {
     step: "02",
-    title: "We audit your placement report",
-    body: "Eight dimensions: ad density, content quality, brand safety, traffic sources, MFA signals, and more.",
+    title: "Run it through the self-service tool",
+    body: "Upload your CSV to Display Gate Guard. We score every placement across eight quality dimensions instantly.",
   },
   {
     step: "03",
-    title: "Get a scored exclusion list",
-    body: "Download a ready-to-import CSV. Add it to your placement exclusions in 30 seconds.",
+    title: "Or send it to us for a full analysis",
+    body: "Want a deeper look? Send us your report and we'll deliver a full audit with a scored exclusion list and written recommendations.",
   },
 ];
 
@@ -701,9 +701,9 @@ export default async function Home() {
               Display Gate Guard audits your placements automatically
             </h2>
             <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, marginBottom: 32 }}>
-              Connect your Google Ads account. We analyze every placement in your
-              campaign against eight quality dimensions. You get a scored exclusion
-              list ready to import in 30 seconds.
+              Export your placement report from Google Ads and run it through the
+              self-service tool — or send it to us for a full audit with a written
+              report. Either way, you get a scored exclusion list ready to import.
             </p>
             <a
               href="https://displaygg.com"
