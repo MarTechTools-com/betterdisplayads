@@ -50,7 +50,14 @@ export default function Imprint() {
         <div className="prose">
           <h2>Operator</h2>
           <p>
-            Nenad Franjic<br />
+            <a
+              href="https://www.linkedin.com/in/nenad-franjic-511bb981/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Nenad Franjic
+            </a>
+            <br />
             BetterDisplayAds.com
           </p>
 

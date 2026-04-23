@@ -69,6 +69,7 @@ export default async function BlogPost({ params }: Props) {
     author: {
       "@type": "Person",
       name: author,
+      sameAs: "https://www.linkedin.com/in/nenad-franjic-511bb981/",
     },
     publisher: {
       "@type": "Organization",
@@ -128,7 +129,14 @@ export default async function BlogPost({ params }: Props) {
               })}
             </time>
             <span style={{ color: "var(--border2)", userSelect: "none" }}>·</span>
-            <span>{author}</span>
+            <a
+              href="https://www.linkedin.com/in/nenad-franjic-511bb981/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--muted)", textDecoration: "none" }}
+            >
+              {author}
+            </a>
           </div>
 
           <h1
