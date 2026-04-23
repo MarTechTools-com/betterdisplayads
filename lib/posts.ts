@@ -9,6 +9,7 @@ export interface PostMeta {
   title: string;
   date: string;
   excerpt: string;
+  author: string;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -25,6 +26,7 @@ export function getAllPosts(): PostMeta[] {
         title: data.title ?? slug,
         date: data.date ?? "",
         excerpt: data.excerpt ?? data.description ?? "",
+        author: data.author ?? "Nenad Franjic",
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));

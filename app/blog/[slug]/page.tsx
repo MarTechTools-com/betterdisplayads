@@ -56,6 +56,8 @@ export default async function BlogPost({ params }: Props) {
 
   const postUrl = `${BASE}/blog/${slug}`;
 
+  const author = frontmatter.author ?? "Nenad Franjic";
+
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -65,9 +67,8 @@ export default async function BlogPost({ params }: Props) {
     datePublished: frontmatter.date,
     dateModified: frontmatter.date,
     author: {
-      "@type": "Organization",
-      name: "BetterDisplayAds.com",
-      url: BASE,
+      "@type": "Person",
+      name: author,
     },
     publisher: {
       "@type": "Organization",
@@ -113,6 +114,10 @@ export default async function BlogPost({ params }: Props) {
               fontSize: 12,
               color: "var(--muted)",
               marginBottom: 16,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              flexWrap: "wrap",
             }}
           >
             <time dateTime={frontmatter.date}>
@@ -122,6 +127,8 @@ export default async function BlogPost({ params }: Props) {
                 day: "numeric",
               })}
             </time>
+            <span style={{ color: "var(--border2)", userSelect: "none" }}>·</span>
+            <span>{author}</span>
           </div>
 
           <h1
@@ -269,6 +276,7 @@ export default async function BlogPost({ params }: Props) {
         <div style={{ display: "flex", gap: 24 }}>
           {[
             { href: "/privacy", label: "Privacy" },
+            { href: "/terms", label: "Terms" },
             { href: "/imprint", label: "Imprint" },
             {
               href: "https://displaygg.com",

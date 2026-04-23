@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Imprint",
   description: "Legal information for BetterDisplayAds.com",
+  alternates: { canonical: "https://www.betterdisplayads.com/imprint" },
 };
 
 export default function Imprint() {
@@ -49,23 +50,23 @@ export default function Imprint() {
         <div className="prose">
           <h2>Operator</h2>
           <p>
-            BetterDisplayAds.com is operated by the team behind Display Gate
-            Guard.
+            Nenad Franjic<br />
+            BetterDisplayAds.com
           </p>
 
           <h2>Contact</h2>
           <p>
             Email:{" "}
-            <a href="mailto:info@displaygateguard.com">
-              info@displaygateguard.com
+            <a href="mailto:nenad.franjic@displaygateguard.com">
+              nenad.franjic@displaygateguard.com
             </a>
           </p>
 
           <h2>Responsible for content</h2>
           <p>
-            The editorial team at BetterDisplayAds.com is responsible for the
-            content published on this website within the meaning of applicable
-            press law.
+            Nenad Franjic is responsible for the content published on this
+            website within the meaning of applicable press law (§ 55 Abs. 2
+            RStV).
           </p>
 
           <h2>Liability for content</h2>
@@ -83,6 +84,13 @@ export default function Imprint() {
             have no influence over the content of those sites and accept no
             liability for them. The respective operators of those sites are
             solely responsible for their content.
+          </p>
+
+          <h2>Copyright</h2>
+          <p>
+            All content published on this website — including text, graphics,
+            and data — is subject to copyright law. Reproduction or
+            redistribution requires prior written consent from the operator.
           </p>
 
           <h2>Online dispute resolution (EU)</h2>

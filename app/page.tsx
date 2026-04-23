@@ -886,6 +886,7 @@ export default async function Home() {
         <div style={{ display: "flex", gap: 24 }}>
           {[
             { href: "/privacy", label: "Privacy" },
+            { href: "/terms", label: "Terms" },
             { href: "/imprint", label: "Imprint" },
             { href: "https://displaygg.com", label: "Display Gate Guard", external: true },
           ].map((link) => (
