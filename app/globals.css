@@ -2,12 +2,17 @@
 
 :root {
   --bg:      #0a0d12;
-  --surface: #131720;
+  --surface: #111520;
+  --surface2: #161b26;
   --border:  #1e2530;
-  --text:    #f0f4f8;
+  --border2: #252d3a;
+  --text:    #eef2f7;
   --muted:   #6b7a8d;
+  --muted2:  #4a5568;
   --accent:  #0ea5e9;
+  --accent2: #38bdf8;
   --amber:   #f59e0b;
+  --amber2:  #fbbf24;
   --error:   #ef4444;
   --success: #22c55e;
 }
@@ -26,6 +31,18 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* Page content sits above canvas */
+.page-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Prose styles for MDX blog content */
@@ -112,12 +129,29 @@ body {
 
 /* Float animation for ebook image */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-12px) rotate(-2deg); }
 }
 
 .book-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Blog card hover */
+.blog-card {
+  transition: border-color 0.15s, transform 0.2s;
+}
+.blog-card:hover {
+  border-color: var(--border2) !important;
+  transform: translateY(-2px);
+}
+
+/* Placement table row hover */
+.placement-row {
+  transition: background 0.12s;
+}
+.placement-row:hover {
+  background: rgba(14, 165, 233, 0.04);
 }
 
 /* ── Responsive grid layouts ───────────────────────────────────────── */

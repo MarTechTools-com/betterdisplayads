@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { EmailForm } from "@/components/EmailForm";
@@ -27,6 +26,19 @@ const STATS = [
     label: "lost to ad fraud globally this year",
     source: "Statista, 2025",
   },
+];
+
+const BLOG_ACCENTS = [
+  "#0ea5e9",
+  "#6366f1",
+  "#ef4444",
+  "#8b5cf6",
+  "#10b981",
+  "#f59e0b",
+  "#ec4899",
+  "#14b8a6",
+  "#f97316",
+  "#a3e635",
 ];
 
 const PLACEMENTS = [
@@ -202,21 +214,65 @@ export default async function Home() {
             justifyContent: "center",
           }}
         >
-          <Image
-            src="/ebook-tablet.png"
-            alt="Display Advertising Gone Bad — free ebook on tablet"
-            width={1127}
-            height={1491}
-            priority
+          <div
             className="book-float"
             style={{
-              width: "100%",
-              maxWidth: 360,
-              height: "auto",
+              width: 300,
+              height: 400,
               filter:
-                "drop-shadow(0 32px 64px rgba(0,0,0,0.6)) drop-shadow(0 8px 24px rgba(14,165,233,0.06))",
+                "drop-shadow(0 40px 80px rgba(0,0,0,0.7)) drop-shadow(0 8px 32px rgba(14,165,233,0.10))",
             }}
-          />
+          >
+            <svg
+              viewBox="0 0 300 400"
+              width="300"
+              height="400"
+            >
+              <defs>
+                <linearGradient id="tabletGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#1a2035" />
+                  <stop offset="100%" stopColor="#0d1018" />
+                </linearGradient>
+                <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#c0392b" />
+                  <stop offset="100%" stopColor="#8b1a10" />
+                </linearGradient>
+                <radialGradient id="screenGlow" cx="0.2" cy="0.3">
+                  <stop offset="0%" stopColor="#fff" stopOpacity="0.12" />
+                  <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+                </radialGradient>
+                <clipPath id="screenClip">
+                  <rect x="22" y="28" width="256" height="344" rx="4" />
+                </clipPath>
+              </defs>
+              <rect x="0" y="0" width="300" height="400" rx="18" fill="url(#tabletGrad)" />
+              <rect x="1" y="1" width="298" height="398" rx="17" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" />
+              <circle cx="150" cy="12" r="3" fill="#0d1018" />
+              <rect x="22" y="28" width="256" height="344" rx="4" fill="url(#screenGrad)" />
+              <g clipPath="url(#screenClip)">
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                  <line key={i} x1="0" y1={60 + i * 40} x2="300" y2={60 + i * 40} stroke="rgba(0,0,0,0.15)" strokeWidth="0.5" />
+                ))}
+                <rect x="30" y="48" width="120" height="18" rx="3" fill="rgba(0,0,0,0.3)" />
+                <text x="38" y="61" fill="rgba(255,255,255,0.7)" fontSize="8" fontFamily="monospace" fontWeight="500">2026 AD FRAUD REPORT</text>
+                <text x="30" y="108" fill="#fff" fontSize="22" fontFamily="'Space Grotesk',sans-serif" fontWeight="700" letterSpacing="-0.5">DISPLAY</text>
+                <text x="30" y="134" fill="#fff" fontSize="22" fontFamily="'Space Grotesk',sans-serif" fontWeight="700" letterSpacing="-0.5">ADVERTISING</text>
+                <text x="30" y="160" fill="#fff" fontSize="22" fontFamily="'Space Grotesk',sans-serif" fontWeight="700" letterSpacing="-0.5">GONE BAD</text>
+                <rect x="30" y="172" width="240" height="1.5" fill="rgba(255,255,255,0.2)" />
+                <rect x="30" y="184" width="200" height="7" rx="2" fill="rgba(255,255,255,0.15)" />
+                <rect x="30" y="197" width="170" height="7" rx="2" fill="rgba(255,255,255,0.1)" />
+                <rect x="30" y="210" width="185" height="7" rx="2" fill="rgba(255,255,255,0.1)" />
+                <rect x="30" y="223" width="140" height="7" rx="2" fill="rgba(255,255,255,0.08)" />
+                <rect x="22" y="280" width="256" height="92" fill="rgba(0,0,0,0.35)" />
+                <text x="30" y="305" fill="rgba(255,255,255,0.5)" fontSize="7" fontFamily="monospace">Ad Fraud Losses · Where Your Spend Goes</text>
+                <text x="30" y="318" fill="rgba(255,255,255,0.3)" fontSize="7" fontFamily="monospace">and How to Get It Back</text>
+                <rect x="30" y="328" width="72" height="14" rx="3" fill="rgba(255,255,255,0.1)" />
+                <text x="34" y="339" fill="rgba(255,255,255,0.5)" fontSize="7" fontFamily="monospace">BetterDisplayAds.com</text>
+                <rect x="22" y="28" width="256" height="344" fill="url(#screenGlow)" opacity="0.3" />
+              </g>
+              <circle cx="150" cy="386" r="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -226,16 +282,54 @@ export default async function Home() {
           borderTop: "1px solid var(--border)",
           borderBottom: "1px solid var(--border)",
           background: "var(--surface)",
-          padding: "40px 40px",
         }}
       >
         <div className="stats-grid">
-          {STATS.map((stat) => (
-            <div key={stat.number}>
+          {STATS.map((stat, i) => (
+            <div
+              key={stat.number}
+              className="stat-item"
+              style={{
+                padding: "36px 40px",
+                borderRight: i < STATS.length - 1 ? "1px solid var(--border)" : "none",
+              }}
+            >
+              <div
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 8,
+                  background: "rgba(14,165,233,0.08)",
+                  border: "1px solid rgba(14,165,233,0.15)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 16,
+                }}
+              >
+                {i === 0 && (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="3" fill="var(--accent)" />
+                    <circle cx="7" cy="7" r="6" stroke="var(--accent)" strokeWidth="1" fill="none" opacity="0.4" />
+                  </svg>
+                )}
+                {i === 1 && (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2a5 5 0 100 10A5 5 0 007 2z" stroke="var(--accent)" strokeWidth="1" fill="none" />
+                    <path d="M7 5v4M5 7h4" stroke="var(--accent)" strokeWidth="1" strokeLinecap="round" />
+                  </svg>
+                )}
+                {i === 2 && (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <rect x="2" y="4" width="10" height="7" rx="1.5" stroke="var(--accent)" strokeWidth="1" fill="none" />
+                    <path d="M5 4V3a2 2 0 014 0v1" stroke="var(--accent)" strokeWidth="1" />
+                  </svg>
+                )}
+              </div>
               <div
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: 40,
+                  fontSize: 38,
                   fontWeight: 700,
                   letterSpacing: "-0.02em",
                   color: "var(--amber)",
@@ -245,18 +339,17 @@ export default async function Home() {
               >
                 {stat.number}
               </div>
-              <div style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.4, marginBottom: 4 }}>
                 {stat.label}
               </div>
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 11,
-                  color: "var(--border)",
-                  marginTop: 4,
+                  fontSize: 10,
+                  color: "var(--muted2)",
                 }}
               >
-                / source: {stat.source}
+                / {stat.source}
               </div>
             </div>
           ))}
@@ -369,10 +462,11 @@ export default async function Home() {
               </tr>
             </thead>
             <tbody>
-              {PLACEMENTS.map((row) => (
+              {PLACEMENTS.map((row, i) => (
                 <tr
                   key={row.domain}
-                  style={{ borderBottom: "1px solid rgba(30, 37, 48, 0.8)" }}
+                  className="placement-row"
+                  style={{ borderBottom: i < PLACEMENTS.length - 1 ? "1px solid var(--border)" : "none" }}
                 >
                   <td
                     style={{
@@ -499,68 +593,77 @@ export default async function Home() {
           </div>
 
           <div className="blog-card-grid">
-            {posts.map((post) => (
+            {posts.map((post, idx) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 style={{ textDecoration: "none", display: "block" }}
               >
                 <article
+                  className="blog-card"
                   style={{
                     background: "var(--bg)",
                     border: "1px solid var(--border)",
-                    borderRadius: 10,
-                    padding: "28px 28px 24px",
+                    borderRadius: 12,
+                    overflow: "hidden",
                     height: "100%",
-                    transition: "border-color 0.15s",
                   }}
                 >
                   <div
                     style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 11,
-                      color: "var(--muted)",
-                      marginBottom: 12,
+                      height: 3,
+                      background: BLOG_ACCENTS[idx % BLOG_ACCENTS.length],
+                      opacity: 0.7,
                     }}
-                  >
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
+                  />
+                  <div style={{ padding: "22px 24px 20px" }}>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 10,
+                        color: "var(--muted2)",
+                        marginBottom: 10,
+                      }}
+                    >
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontSize: 16,
+                        fontWeight: 600,
+                        letterSpacing: "-0.01em",
+                        color: "var(--text)",
+                        lineHeight: 1.35,
+                        marginBottom: 10,
+                      }}
+                    >
+                      {post.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        color: "var(--muted)",
+                        lineHeight: 1.55,
+                        margin: "0 0 16px",
+                      }}
+                    >
+                      {post.excerpt}
+                    </p>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 12,
+                        color: "var(--accent)",
+                      }}
+                    >
+                      Read →
+                    </span>
                   </div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: 17,
-                      fontWeight: 600,
-                      letterSpacing: "-0.01em",
-                      color: "var(--text)",
-                      lineHeight: 1.3,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {post.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: "var(--muted)",
-                      lineHeight: 1.5,
-                      margin: "0 0 20px",
-                    }}
-                  >
-                    {post.excerpt}
-                  </p>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 12,
-                      color: "var(--accent)",
-                    }}
-                  >
-                    Read →
-                  </span>
                 </article>
               </Link>
             ))}
@@ -673,26 +776,46 @@ export default async function Home() {
             {/* Terminal output visual */}
             <div
               style={{
-                marginTop: 32,
+                marginTop: 28,
                 background: "var(--surface)",
                 border: "1px solid var(--border)",
-                borderRadius: 8,
-                padding: "16px 20px",
-                fontFamily: "var(--font-mono)",
-                fontSize: 12,
+                borderRadius: 10,
+                overflow: "hidden",
               }}
             >
-              <div style={{ color: "var(--muted)", marginBottom: 8 }}>
-                $ displaygg audit --account=123-456-789
+              <div
+                style={{
+                  padding: "10px 16px",
+                  borderBottom: "1px solid var(--border)",
+                  display: "flex",
+                  gap: 6,
+                  alignItems: "center",
+                  background: "rgba(10,13,18,0.4)",
+                }}
+              >
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ef4444", display: "block", opacity: 0.7 }} />
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#f59e0b", display: "block", opacity: 0.7 }} />
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#22c55e", display: "block", opacity: 0.7 }} />
               </div>
-              <div style={{ color: "var(--success)" }}>
-                ✓ Audited 847 placements
-              </div>
-              <div style={{ color: "var(--error)" }}>
-                ✕ 23 CRITICAL · 41 HIGH flagged
-              </div>
-              <div style={{ color: "var(--accent)", marginTop: 4 }}>
-                → exclusions.csv ready to import
+              <div
+                style={{
+                  padding: "16px 20px",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 12,
+                }}
+              >
+                <div style={{ color: "var(--muted)", marginBottom: 10 }}>
+                  $ displaygg audit --account=123-456-789
+                </div>
+                <div style={{ color: "var(--success)", marginBottom: 4 }}>
+                  ✓ Audited 847 placements
+                </div>
+                <div style={{ color: "var(--error)", marginBottom: 4 }}>
+                  ✕ 23 CRITICAL · 41 HIGH flagged
+                </div>
+                <div style={{ color: "var(--accent)" }}>
+                  → exclusions.csv ready to import
+                </div>
               </div>
             </div>
           </div>
